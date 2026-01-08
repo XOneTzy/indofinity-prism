@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>TikFinity Widget</title>
+<title>TikFinity Auto Responsive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -15,21 +15,32 @@ html, body {
   overflow: hidden;
 }
 
-/* === TIKFINITY POSITION === */
+/* Default TikFinity */
 #tikfinity {
   position: absolute;
-
-  /* 🔧 ATUR POSISI DI SINI */
-  bottom: 120px;
-  right: 40px;
-
-  width: 320px;
-  height: 600px;
-
   border: none;
   background: transparent;
-
   pointer-events: none;
+}
+
+/* ===== PORTRAIT (HP / TikTok Live) ===== */
+@media (orientation: portrait) {
+  #tikfinity {
+    width: 28vw;
+    height: 70vh;
+    bottom: 10vh;
+    right: 4vw;
+  }
+}
+
+/* ===== LANDSCAPE (PC / OBS) ===== */
+@media (orientation: landscape) {
+  #tikfinity {
+    width: 22vw;
+    height: 65vh;
+    bottom: 6vh;
+    right: 2vw;
+  }
 }
 </style>
 </head>

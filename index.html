@@ -23,23 +23,29 @@ html, body {
   height: 100%;
 }
 
-/* TIKFINITY – DISESUAIKAN DENGAN PRISM */
+/* TIKFINITY – PAS LAYOUT PRISM */
 #tikfinity {
   position: absolute;
 
-  /* POSISI AMAN PRISM */
-  top: 120px;        /* turun dikit dari atas */
-  right: 40px;       /* jarak dari kanan */
+  /* ===== OPSI POSISI VERTIKAL ===== */
+  top: 120px;   /* default seimbang */
+  /* top: 80px;   naik */
+  /* top: 160px;  turun */
 
-  width: 340px;      /* ukuran pas TikTok */
-  height: 1500px;    /* hampir full, tapi aman */
+  /* ===== OPSI POSISI HORIZONTAL ===== */
+  right: 40px;  /* default aman */
+  /* right: 20px;  lebih ke kanan */
+  /* right: 60px;  agak masuk */
+
+  width: 340px;
+  height: 1500px;
 
   border: none;
   background: transparent;
   pointer-events: none;
 }
 
-/* ❌ MATIKAN JIKA LANDSCAPE (OBS) */
+/* ❌ MATIKAN JIKA LANDSCAPE */
 @media (orientation: landscape) {
   #tikfinity {
     display: none;

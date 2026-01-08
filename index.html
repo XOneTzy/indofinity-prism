@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>TikFinity Auto Responsive</title>
+<title>TikFinity Full Portrait</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -15,31 +15,24 @@ html, body {
   overflow: hidden;
 }
 
-/* Default TikFinity */
+/* TikFinity FULL Portrait */
 #tikfinity {
   position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 32vw;      /* lebar ideal TikTok */
+  height: 100vh;    /* full tinggi */
+
   border: none;
   background: transparent;
   pointer-events: none;
 }
 
-/* ===== PORTRAIT (HP / TikTok Live) ===== */
-@media (orientation: portrait) {
-  #tikfinity {
-    width: 28vw;
-    height: 70vh;
-    bottom: 10vh;
-    right: 4vw;
-  }
-}
-
-/* ===== LANDSCAPE (PC / OBS) ===== */
+/* ❌ Matikan jika Landscape */
 @media (orientation: landscape) {
   #tikfinity {
-    width: 22vw;
-    height: 65vh;
-    bottom: 6vh;
-    right: 2vw;
+    display: none;
   }
 }
 </style>

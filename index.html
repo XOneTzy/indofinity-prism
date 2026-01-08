@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Indofinity Full Interaction</title>
+<title>Indofinity Overlay + Likes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 html, body {
   margin: 0;
@@ -13,19 +14,49 @@ html, body {
   background: transparent;
   overflow: hidden;
 }
-iframe {
+
+/* Overlay utama full */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
+  z-index: 1;
+}
+
+/* === LIKES POSITION === */
+#likes {
+  position: absolute;
+
+  /* 🔧 UBAH POSISI DI SINI */
+  bottom: 120px;   /* jarak dari bawah */
+  right: 40px;     /* jarak dari kanan */
+
+  width: 300px;    /* ukuran likes */
+  height: 600px;
+
+  border: none;
+  background: transparent;
+  z-index: 2;
+
+  pointer-events: none; /* biar tidak ganggu klik */
 }
 </style>
 </head>
 <body>
 
 <iframe
+  id="overlay"
   src="https://widgets.indofinity.com/widgets/overlay/e8841b2d-474a-4d12-804c-79a538c6e35c?screen=1"
-  allow="autoplay; clipboard-write"
-  referrerpolicy="no-referrer">
+  allow="autoplay">
+</iframe>
+
+<iframe
+  id="likes"
+  src="https://widgets.indofinity.com/widgets/likes/e8841b2d-474a-4d12-804c-79a538c6e35c"
+  allow="autoplay">
 </iframe>
 
 </body>

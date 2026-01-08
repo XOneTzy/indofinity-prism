@@ -2,34 +2,45 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>TikFinity Full Portrait</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikFinity PRISM Fit</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 
 <style>
+/* RESET */
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: transparent;
   overflow: hidden;
 }
 
-/* TikFinity FULL Portrait */
+/* CONTAINER KHUSUS PRISM */
+#prism-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* TIKFINITY – PAS KE FRAME PRISM */
 #tikfinity {
   position: absolute;
   top: 0;
   right: 0;
 
-  width: 32vw;      /* lebar ideal TikTok */
-  height: 100vh;    /* full tinggi */
+  height: 100%;
+  width: 360px;      /* LEBAR AMAN PRISM (9:16) */
+
+  max-width: 35vw;   /* RESPONSIVE kalau layar kecil */
+  min-width: 280px;  /* Tidak terlalu kecil */
 
   border: none;
   background: transparent;
   pointer-events: none;
 }
 
-/* ❌ Matikan jika Landscape */
+/* ❌ MATIKAN JIKA LANDSCAPE */
 @media (orientation: landscape) {
   #tikfinity {
     display: none;
@@ -39,11 +50,13 @@ html, body {
 </head>
 <body>
 
-<iframe
-  id="tikfinity"
-  src="https://tikfinity.zerody.one/widget/myactions?cid=2514724&screen=2"
-  allow="autoplay">
-</iframe>
+<div id="prism-canvas">
+  <iframe
+    id="tikfinity"
+    src="https://tikfinity.zerody.one/widget/myactions?cid=2514724&screen=2"
+    allow="autoplay">
+  </iframe>
+</div>
 
 </body>
 </html>

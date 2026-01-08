@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>TikFinity PRISM Fit</title>
+<title>PRISM TikFinity + VDO.Ninja</title>
 <meta name="viewport" content="width=1080, height=1920, initial-scale=1.0">
 
 <style>
@@ -23,17 +23,32 @@ html, body {
   height: 100%;
 }
 
-/* TIKFINITY – PAS LAYOUT PRISM */
+/* ===== VDO.NINJA (VIDEO UTAMA) ===== */
+#vdoninja {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+  z-index: 1;
+}
+
+/* ===== TIKFINITY (OVERLAY) ===== */
 #tikfinity {
   position: absolute;
+  z-index: 2;
 
-  /* ===== OPSI POSISI VERTIKAL ===== */
-  top: 120px;   /* default seimbang */
+  /* OPSI POSISI VERTIKAL */
+  top: 120px;
   /* top: 80px;   naik */
   /* top: 160px;  turun */
 
-  /* ===== OPSI POSISI HORIZONTAL ===== */
-  right: 40px;  /* default aman */
+  /* OPSI POSISI HORIZONTAL */
+  right: 40px;
   /* right: 20px;  lebih ke kanan */
   /* right: 60px;  agak masuk */
 
@@ -45,7 +60,7 @@ html, body {
   pointer-events: none;
 }
 
-/* ❌ MATIKAN JIKA LANDSCAPE */
+/* ❌ MATIKAN JIKA LANDSCAPE (OBS) */
 @media (orientation: landscape) {
   #tikfinity {
     display: none;
@@ -56,11 +71,21 @@ html, body {
 <body>
 
 <div id="prism">
+
+  <!-- VIDEO / KAMERA -->
+  <iframe
+    id="vdoninja"
+    src="https://vdo.ninja/?view=atommen6vN"
+    allow="autoplay; camera; microphone">
+  </iframe>
+
+  <!-- TIKFINITY OVERLAY -->
   <iframe
     id="tikfinity"
     src="https://tikfinity.zerody.one/widget/myactions?cid=2514724&screen=2"
     allow="autoplay">
   </iframe>
+
 </div>
 
 </body>
